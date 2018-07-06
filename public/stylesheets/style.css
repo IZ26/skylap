@@ -1,0 +1,153 @@
+*{
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+body {
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.header_img {
+
+  width: 100%;
+  height: 460px;
+}
+.text_content{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.img{
+  width: 100%;
+}
+.separator_div {
+  background-color: #1d3654;
+}
+
+
+.info_text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #00b09c;
+}
+.text_content p{
+  width: 70%;
+  margin-top: 14px;
+}
+.name{
+  color: #00b09c;
+  padding-top: 20px;
+}
+.title{
+  color: #1d3654;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 15px;
+}
+.info{
+  background: #2a3984;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  color: #fff;
+}
+.info1{
+  background: #00b09c ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  color: #fff;
+}
+.info_contact{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #00b09c;
+  padding: 20px;
+  margin-top: 40px;
+  transition: .3s;
+  border-left: none;
+}
+.info_contact:hover{
+  background: #00b09c;
+  color: #fff;
+  transition: .3s;
+}
+.search_form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/searchbar_bg.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat ;
+  padding: 87px;
+}
+.form{
+  width: 50%;
+}
+.autocomplete{
+  width: 70%;
+  height: 35px;
+  border-top-left-radius: 5px ;
+  border-bottom-left-radius: 5px ;
+  border: 1px solid #00b09c;
+  padding-left: 10px;
+}
+.btn_submit{
+  width: 15%;
+  height: 35px;
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border: 1px solid #00b09c;
+  background: #00b09c;
+  color: #ffffff;
+}
+.autocomplete-items{
+  position: absolute;
+  background: white;
+  width: 34%;
+  height: 150px;
+}
+.footer{
+  width: 100%;
+  height: 78vh;
+  background-image: url("../images/Skylap-footer-bg_70.jpg");
+  background-size: contain;
+  background-position: center ;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer img{
+  width: 20%;
+}
+.footer a{
+  color: #ffffff;
+}
+
+

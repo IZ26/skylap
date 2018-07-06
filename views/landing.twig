@@ -1,0 +1,352 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <div class="container-flui">
+                <div class="row header_img">
+                    <img src="/images/header.jpg" alt="">
+                </div>
+            </div>
+            <div class="container-fluid p-0">
+                <div class="row info_text">
+                    <div class="col-sm-3 p-0">
+                        <img class="img"
+                             src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ea/e2/dc/eae2dca0-f554-b91d-b206-7e223bb85ecf/AppIcon-1x_U007emarketing-85-220-0-6.png/246x0w.jpg"
+                             alt="">
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="container">
+                            <div class="row text_content">
+                                <h2 class="name">{{ companyName }}</h2>
+                                <!-- Code below is desactivate cause there is not enought results if so -->
+
+                                <p>
+                                    {% if companyName|length > 1 %}
+                                        La compagnie aérienne {{ companyName }} est une compagnie {{ nationality }} créée en {{ date }}, elle dessert aujourd’hui des destinations partout autour du globe
+                                    {% elseif companyName|length > 10 %}
+                                        {{ companyName }} est une compagnie aérienne {{ nationality }}. Fondée en {{ date }}, elle permet à ce jour de voyager dans le monde entier.
+                                    {% elseif companyName|length > 13 %}
+                                        {{ companyName }} a été fondé en {{ date }}. C’est une compagnie {{ nationality }} permettant de voyager partout dans le monde.
+                                    {% elseif companyName|length > 14 %}
+                                        {{ companyName }} est l’une des compagnies permettant de voyager sur toute la terre. Fondée en {{ date }}, elle est originaire de {{ nationality }}.
+                                    {% elseif companyName|length > 15 %}
+                                        Permettant de voyager à travers le globe, {{ companyName }} est une compagnie {{ nationality }} crée en {{ date }}.
+                                    {% endif %}
+                                </p>
+
+
+                                <!-- Code below is desactivate cause there is not enought results if so -->
+
+                                <p>
+                                    {% if companyName|length > 6 %}
+                                        Son siège social se situe à {{ headquarter }}.
+                                        Leur aéroport principale est l’aéroport de {{ rootAirport }}.
+                                    {% elseif companyName|length > 10 %}
+                                        {{ rootAirport }} est la ville où se situe leur aéroport principale. {{ headquarter }} quant à elle est le siège sociale de la compagnie
+                                    {% elseif companyName|length > 12 %}
+                                        La compagnie à pour siège sociale de l’entreprise {{ headquarter }} et {{ rootAirport }} est leur aéroport principal.
+                                    {% elseif companyName|length > 14 %}
+                                        Ayant pour siège d’entreprise {{ headquarter }}, c’est à {{ rootAirport }} qui basé leur aéroport principal.
+                                    {% elseif companyName|length > 16 %}
+                                        {{ rootAirport }} est l’aéroport principal de la Lufthansa. Le siège de l’entreprise se situe à {{ headquarter }}.
+                                    {% endif %}
+                                </p>
+
+                                <p>
+                                    {% if companyName|length > 6 %}
+                                        Elle possède une flotte moderne de {{ fleetSize }} appareils. La moyenne d’âge de ces derniers est de {{ fleetAge }} années.
+                                    {% elseif companyName|length > 10 %}
+                                        Actuellement fort d’une flotte de {{ fleetSize }} avions, c’est avec une moyenne d’âge de x années que se démarque la compagne.
+                                    {% elseif companyName|length > 12 %}
+                                        Lufthansa a une moyenne d’âge de {{ fleetAge }} années pour ses appareils. Elle totalise {{ fleetSize }} avions dans sa flotte.
+                                    {% elseif companyName|length > 14 %}
+                                        Les avions de la compagnie aérienne {{ companyName }} ont une moyenne d’âge de x années, pour un nombre de {{ fleetSize }} appareils.
+                                    {% elseif companyName|length > 16 %}
+                                        Lufthtansa comptabilise aujourd’hui {{ fleetSize }} appareils dans a flotte avec une moyenne d’âges de {{ fleetAge }} années.
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 info_contact">
+                                telephone : {{ phone }}
+                            </div>
+                            <div class="col-sm-6 info_contact">
+                                site : {{ site }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid info_title">
+                        <div class="row separator_div">
+                            <div class="mx-auto">
+                                <h5 class="title text-light">INFORMATIONS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-3 info">
+                                <h5>Taille bagages à main</h5>
+                                <img src="/images/case.png" alt="">
+                                {% if handyBagHeight == null %}
+                                    non connu
+                                {% else %}
+                                    {{ handyBagHeight }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info1">
+                                <h5>Poids maximum</h5>
+                                <img src="/images/weight.png" alt="">
+                                {% if maxWeight == null %}
+                                    non connu
+                                {% else %}
+                                    {{ maxWeight }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info">
+                                <h5>Autorisé en soute</h5>
+                                <img src="/images/rollincase.png" alt="">
+                                {% if maxWeight == null %}
+                                    non connu
+                                {% else %}
+                                    {{ maxWeight }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info1">
+                                <h5>Poids des bagages cabines</h5>
+                                <img src="/images/weight.png" alt="">
+                                {% if maxCab == null %}
+                                    non connu
+                                {% else %}
+                                    {{ maxCab }}
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2 col-md-3 info1">
+                                <h5>Service à bord</h5>
+                                <img src="/images/dollar.png" alt="">
+                                {% if service == null %}
+                                    non connu
+                                {% else %}
+                                    {{ service }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info">
+                                <h5>Ponctualité</h5>
+                                <img src="/images/case.png" alt="">
+                                {% if ponctuality == null %}
+                                    non connu
+                                {% else %}
+                                    {{ ponctuality }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info1">
+                                <h5>Vol retardé</h5>
+                                <img src="/images/case.png" alt="">
+                                {% if lateFlights == null %}
+                                    non connu
+                                {% else %}
+                                    {{ lateFlights }}
+                                {% endif %}
+                            </div>
+
+                            <div class="col-sm-2 col-md-3 info">
+                                <h5>Wifi</h5>
+                                <img src="/images/wifi.png" alt="">
+                                {% if wifi == null %}
+                                    non connu
+                                {% else %}
+                                    {{ wifi }}
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        <section class="search_form container-fluid">
+                            <form class="form" autocomplete="off">
+                                <input class="autocomplete" id="myInput" type="text"
+                                       placeholder="Rechercher une companie">
+                                <button class="btn_submit" type="submit" id="clickMe"><i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <img src="/images/Skylap_logo.png" alt=""/>
+        <div class="link">
+            <a href="">CGU</a>
+            <a href="">MENTION LÉGALE</a>
+            <a href=""> RECRUTEMENT </a>
+        </div>
+    </footer>
+{% endblock %}
+
+
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //- Using an anonymous function:
+        document.getElementById("clickMe").onclick = function (e) {
+            e.preventDefault();
+            let value = document.getElementById('myInput').value;
+            console.log(value);
+            window.location = "http://localhost:3000/" + value;
+
+        };
+
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) {
+                    return false;
+                }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        let data = [];
+        $.ajax({
+            method: 'GET',
+            url: '/search',
+            data: data,
+            success: function (company) {
+                var allNames = JSON.parse(company)
+                autocomplete(document.getElementById('myInput'), allNames);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    </script>
+{% endblock %}
+
+<!--<p>company name: <b>{{ companyName }}</b> <br></p>
+iata: <b>{{ iata }}</b> <br>
+completeName: <b>{{ completeName }}</b> <br>
+cabinWeight: <b>{{ cabinWeight }}</b> <br>
+holdHeight: <b>{{ holdHeight }}</b> <br>
+maxWeight: <b>{{ maxWeight }}</b> <br>
+wifi: <b>{{ wifi }}</b> <br>
+alliance: <b>{{ alliance }}</b> <br>
+phone: <b>{{ phone }}</b> <br>
+nationality: <b>{{ nationality }}</b> <br>
+rootAirport: <b>{{ rootAirport }}</b> <br>
+creationDate: <b>{{ creationDate }}</b> <br>
+ponctuality: <b>{{ ponctuality }}</b> <br>
+lateFlights: <b>{{ lateFlights }}</b> <br>-->
